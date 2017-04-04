@@ -1,0 +1,41 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "username": {
+        "title": "Email",
+        "type": "string"
+      },
+      "password": {
+        "type": "string",
+        "title": "Password"
+      }
+    },
+    "required": [
+      "login",
+      "password"
+    ]
+  },
+  "form": [
+    {
+      "key": "username",
+      "notitle": true,
+      "required": true,
+      "placeholder": "E-mail or username",
+      "validationMessage": {
+        "invalidUsername": "Invalid username or password"
+      }
+    },
+    {
+      "key": "password",
+      "type": "password",
+      "notitle": true,
+      "required": true,
+      "placeholder": "Password"
+    },
+    {
+      "type": "submit",
+      "title": "Login"
+    }
+  ]
+}
