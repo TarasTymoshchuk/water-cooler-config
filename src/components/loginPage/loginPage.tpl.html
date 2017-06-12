@@ -1,16 +1,17 @@
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-
-            <div class="ui padded purple piled segment login-form-holder">
-
-                <p>{{'Please enter your user information.'}}</p>
-
-                <bz-form form="loginForm" loading="loading" model="user" submit="$ctrl.submitAuth(user)"></bz-form>
-
-            </div>
+    <div class="center margin-top-60">
+        <div>
+            <label for="login">Login</label>
+            <input class="form-control" name="login" id="login">
         </div>
+        <div class="margin-top-30">
+            <label for="pass">Password</label>
+            <input class="form-control" name="password" type="password" id="pass">
+        </div>
+        <button class="btn btn-primary btn-login margin-top-30" ng-click="vm.submitAuth(user)">
+            LogIn
+        </button>
     </div>
 
 </div>

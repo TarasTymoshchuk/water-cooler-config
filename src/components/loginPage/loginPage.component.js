@@ -29,8 +29,7 @@ function LoginPageCtrl($scope, $state, localStorageService, AuthService) {
   vm.isLocked = !!localAuthData.username;
   vm.user = {
     username: localAuthData.username || '',
-    password: localAuthData.password || '',
-    rememberMe: true
+    password: localAuthData.password || ''
   };
 
   function differentUser() {
@@ -38,14 +37,13 @@ function LoginPageCtrl($scope, $state, localStorageService, AuthService) {
     vm.isLocked = false;
     vm.user = {
       username: '',
-      password: '',
-      rememberMe: true
+      password: ''
     };
   }
 
   function submitAuth(user) {
     vm.errors = null;
-    localStorageService.set(STORAGE_KEY, user.rememberMe ? user : {});
+    localStorageService.set(user);
     vm.loading = true;
     auth.login(user).then((response) => {
       vm.loading = false;
