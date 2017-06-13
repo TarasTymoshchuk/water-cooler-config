@@ -22,6 +22,7 @@ function LoginPageCtrl($scope, $state, localStorageService, AuthService) {
   vm.loginForm = loginForm;
   vm.submitAuth = submitAuth;
   vm.differentUser = differentUser;
+  vm.submit = submit;
 
   // load login & password from localstorage if exists
   const localAuthData = localStorageService.get(STORAGE_KEY) || {};
@@ -55,5 +56,9 @@ function LoginPageCtrl($scope, $state, localStorageService, AuthService) {
       vm.loading = false;
       $scope.$broadcast('schemaForm.error.username', 'invalidUsername', error.message, false);
     });
+  }
+
+  function submit() {
+    $state.go('config');
   }
 }

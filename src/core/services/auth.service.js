@@ -18,7 +18,7 @@ function AuthService(appConfig, $http, SessionService) {
   }
 
   function setAuth(user) {
-    //$window.localStorage.setItem('currentUser', angular.toJson(user));
+    // $window.localStorage.setItem('currentUser', angular.toJson(user));
     commonHeaders.Authorization = `Bearer ${user.token}`;
     return user;
   }
@@ -32,7 +32,7 @@ function AuthService(appConfig, $http, SessionService) {
   }
 
   function logout() {
-    //$window.localStorage.removeItem('currentUser');
+    // $window.localStorage.removeItem('currentUser');
     delete commonHeaders.Authorization;
     return SessionService.destroy();
   }

@@ -1,2 +1,52 @@
 config-component {
+  .water-level {
+    margin-left: 40px;
+    margin-top: 40px;
+  }
+
+  body {
+    background-color: #1D1F20;
+  }
+
+  .container {
+    margin-top: 50px;
+    padding-top: 20px;
+    /*background-color: #beb*/
+  }
+  .vertical {
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+  }
+  .vertical {
+    box-shadow: inset 0px 4px 6px #ccc;
+    margin-top: 40px;
+  }
+  .progress-bar {
+    box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
+  }
+  .horizontal {
+    transform: rotate(90deg);
+    margin-top: 10px;
+  }
+
+  .left {
+    position: absolute;
+    width: 50%;
+  }
+
+  .right {
+    position: absolute;
+    top: 80px;
+    right: 400px;
+    width: 40%;
+
+  }
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
 }
