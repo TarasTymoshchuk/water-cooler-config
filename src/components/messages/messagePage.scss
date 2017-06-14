@@ -1,3 +1,15 @@
+messages-component {
+
+  .padding-40 {
+    padding: 40px;
+  }
+
+  .has-danger {
+    .form-control {
+      background: transparentize(#e01133, 0.9);
+      color: #e01133;
+    }
+  }
 
   .center {
     width: 400px;
@@ -18,7 +30,9 @@
     margin-top: 30px;
   }
 
-
+  .input-time {
+    width: 60px;
+  }
 
   .left {
     position: absolute;
@@ -30,3 +44,4 @@
     right: 300px;
     width: 30%;
   }
+}

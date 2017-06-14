@@ -1,42 +1,63 @@
 <ul class="nav nav-tabs">
     <li><a data-toggle="tab" ui-sref="config">Home</a></li>
     <li><a data-toggle="tab" ui-sref="profile">Profile</a></li>
-    <li class="active"><a data-toggle="tab" ui-sref="messages">Messages</a></li>
+    <li class="active"><a data-toggle="tab" ui-sref="messages">Settings</a></li>
 </ul>
-<div class="margin-top-40 col-xs-4 left">
-    <div class="form-group">
-        <label for="level">Critical level of water (%):</label>
-        <input type="text" class="form-control" id="level">
-    </div>
-    <div class="form-group ">
-        <label for="message">Message:</label>
-        <textarea class="form-control" rows="5" id="message"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="channel">Name of channel:</label>
-        <input type="text" class="form-control" id="channel">
-    </div>
-    <div class="checkbox">
-        <label><input type="checkbox" ng-model="checked" ng-init="checked=false">Repeat sending</label>
-    </div>
-    <div class="form-group" ng-if="checked">
-        <label for="time">Every (hours):</label>
-        <input type="text" class="form-control" id="time">
-    </div>
 
-    <div class="checkbox">
-        <label><input type="checkbox">Send notifications</label>
-    </div>
-    <button class="btn btn-primary">Send message</button> <button class="btn btn-primary">Save settings</button>
-</div>
+<div class="padding-40">
+    <form name="configForm" novalidate
+          ng-submit="configForm && configForm.$valid && vm.saveConfig(vm.config)">
+        <div class="row margin-top-40 left">
+            <div class="form-group col-4"
+                 ng-class="{ 'has-danger' : configForm.level.$invalid && !configForm.level.$pristine }">
+                <label for="level">Critical level of water (%):</label>
+                <input type="number" name="level" class="form-control" id="level" ng-model="vm.config.level" required>
+            </div>
+            <div class="form-group col-4"
+                 ng-class="{ 'has-danger' : configForm.message.$invalid && !configForm.message.$pristine }">
+                <label for="message">Message:</label>
+                <textarea class="form-control" rows="5" id="message"
+                          name="message" ng-model="vm.config.message" required></textarea>
+            </div>
+            <div class="form-group col-4"
+                 ng-class="{ 'has-danger' : configForm.channel.$invalid && !configForm.channel.$pristine }">
+                <label for="channel">Name of channel:</label>
+                <input type="text" class="form-control" id="channel" name="channel"
+                       ng-model="vm.config.channel" required>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="checked" ng-init="checked=false">
+                    Repeat sending
+                </label>
+            </div>
+            <div class="form-group col-4" ng-if="checked"
+                 ng-class="{ 'has-danger' : configForm.time.$invalid && !configForm.time.$pristine }">
+                <label for="time">Every (hours):</label>
+                <input type="number" class="form-control input-time" id="time"
+                       name="time" ng-model="vm.config.time">
+            </div>
 
-<div class="margin-top-40 col-xs-4 right">
-    <div class="form-group">
-        <label for="login">Slack login:</label>
-        <input type="text" class="form-control" id="login">
-    </div>
-    <div class="form-group">
-        <label for="password">Slack password:</label>
-        <input type="password" class="form-control" id="password">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="vm.config.notification">Send notifications</label>
+            </div>
+            <button class="btn btn-primary"
+                    ng-disabled="!configForm || configForm.$invalid && configForm.$pristine"
+                    ng-click="configForm.$setPristine()">
+                Save settings
+            </button>
+            <!--<button class="btn btn-primary">Send message</button>-->
+        </div>
+    </form>
+
+    <div class="margin-top-40 col-4 right">
+        <div class="form-group">
+            <label for="login">Slack login:</label>
+            <input type="text" class="form-control" id="login">
+        </div>
+        <div class="form-group">
+            <label for="password">Slack password:</label>
+            <input type="password" class="form-control" id="password">
+        </div>
     </div>
 </div>
