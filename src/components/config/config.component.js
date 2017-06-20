@@ -17,6 +17,7 @@ export default ConfigComponent;
 /* @ngInject */
 function ConfigCtrl($log) {
   const vm = this;
+  vm.level = 0.8;
 
   vm.saveConfig = (config) => {
     vm.config = config;
