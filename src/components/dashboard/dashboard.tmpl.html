@@ -1,0 +1,51 @@
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" ui-sref="dashboard">Home</a></li>
+    <li><a data-toggle="tab" ui-sref="configs">Settings</a></li>
+</ul>
+<div class="display-flex">
+    <div class="">
+        <h4 class="water-level">Water level in the cooler</h4>
+        <div class="container">
+
+            <div class="bowl">
+                <div class="inner">
+                    <div class="fill" ng-style="{'-webkit-animation-iteration-count': vm.level}">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                         x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300"
+                         enable-background="new 0 0 300 300" xml:space="preserve">
+                        <path class="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,
+                        2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,
+                        2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z">
+                        </path>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="de">
+            <div class="den">
+                <div class="dene">
+                    <div class="denem">
+                        <div class="deneme">
+                            23<span>.9</span><strong>&deg;</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <h4><label>Critical level of water (%):</label> 5 </h4><br>
+        <h4><label>Message:</label> The level of water in the cooler in the critical state!</h4><br>
+        <h4><label>Name of channel:</label> vinnitsa-team </h4><br>
+        <h4><label>Repeat sending:</label> Every 8 hours </h4><br>
+        <h4><label>Send notifications:</label> Yes </h4><br>
+        <button class="btn btn-primary" ui-sref="configs">Edit settings</button>
+    </div>
+
+</div>

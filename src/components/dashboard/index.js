@@ -2,22 +2,22 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 import AppCore from '../../core';
-import AdminConfigComponent from './config.component';
+import DashboardComponent from './dashboard.component';
 
-export default angular.module('config', [
+export default angular.module('dashboard', [
   AppCore,
   uiRouter,
   uiBootstrap
 ])
   .config(config)
-  .component(AdminConfigComponent.$name, AdminConfigComponent)
+  .component(DashboardComponent.$name, DashboardComponent)
   .name;
 
 /* @ngInject */
 function config($stateProvider) {
   $stateProvider
-    .state('config', {
-      url: '/admin/config',
-      component: AdminConfigComponent.$name
+    .state('dashboard', {
+      url: '/dashboard',
+      component: DashboardComponent.$name
     });
 }

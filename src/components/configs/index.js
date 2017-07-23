@@ -2,26 +2,23 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 import AppCore from '../../core';
-import HomePageComponent from './homePage.component';
+import ConfigsComponent from './configs.component';
+import './configsPage.scss';
 
-export default angular.module('home', [
+export default angular.module('configs', [
   AppCore,
   uiRouter,
   uiBootstrap
 ])
   .config(config)
-  .component(HomePageComponent.$name, HomePageComponent)
+  .component(ConfigsComponent.$name, ConfigsComponent)
   .name;
 
 /* @ngInject */
 function config($stateProvider) {
   $stateProvider
-    .state('home', {
-      url: '/',
-      component: HomePageComponent.$name,
-      data: {
-        requiresAuth: true
-      }
-    })
-  ;
+    .state('configs', {
+      url: '/configs',
+      component: ConfigsComponent.$name
+    });
 }

@@ -1,21 +1,21 @@
-import template from './config.tmpl.html';
-import './config.scss';
+import template from './dashboard.tmpl.html';
+import './dashboard.scss';
 
-const ConfigComponent = {
-  $name: 'configComponent',
-  selector: 'home',
+const DashboardComponent = {
+  $name: 'dashboardComponent',
+  selector: 'dashboard',
   templateUrl: template,
   bindings: {
     config: '='
   },
-  controller: ConfigCtrl,
+  controller: DashboardCtrl,
   controllerAs: 'vm'
 };
 
-export default ConfigComponent;
+export default DashboardComponent;
 
 /* @ngInject */
-function ConfigCtrl($log) {
+function DashboardCtrl($log) {
   const vm = this;
   vm.level = 0.8;
 
