@@ -8,7 +8,7 @@
         <div class="container">
             <div class="bowl">
                 <div class="inner">
-                    <div class="fill" ng-style="{'-webkit-animation-iteration-count': 0.8}">
+                    <div class="fill" ng-style="{'-webkit-animation-iteration-count': vm.weight/100}">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                          x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300"
                          enable-background="new 0 0 300 300" xml:space="preserve">
@@ -31,7 +31,7 @@
                     <div class="dene">
                         <div class="denem">
                             <div class="deneme">
-                                23<span>.4</span><strong>&deg;</strong>
+                                {{vm.weightInt}}<span>.{{vm.weightFloat}}</span><strong>&deg;</strong>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="dene">
                         <div class="denem">
                             <div class="deneme">
-                                5<span>.5</span><strong>&deg;</strong>
+                                {{vm.weightInt}}<span>.{{vm.weightFloat}}</span><strong>&deg;</strong>
                             </div>
                         </div>
                     </div>
