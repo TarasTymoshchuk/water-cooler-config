@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs">
-    <li><a data-toggle="tab" ui-sref="dashboard">Home</a></li>
+    <li><a data-toggle="tab" ui-sref="dashboard">DashBoard</a></li>
     <li class="active"><a data-toggle="tab" ui-sref="configs">Settings</a></li>
 </ul>
 
@@ -8,55 +8,81 @@
           ng-submit="configForm && configForm.$valid && vm.saveConfig(vm.config)">
         <div class="row left">
             <div class="form-group col-4"
-                 ng-class="{ 'has-danger' : configForm.level.$invalid && !configForm.level.$pristine }">
-                <label for="level">Critical level of water (%):</label>
-                <input type="number" name="level" class="form-control" id="level" ng-model="vm.config.level" required>
+                 ng-class="{ 'has-danger' : configForm.levelSlack.$invalid && !configForm.levelSlack.$pristine }">
+                <label for="levelSlack">Bottle Level To Notification In Slack:</label>
+                <input
+                        type="number"
+                        name="levelSlack"
+                        class="form-control"
+                        id="levelSlack"
+                        ng-model="vm.config.levelSlack"
+                        required />
             </div>
             <div class="form-group col-4"
-                 ng-class="{ 'has-danger' : configForm.message.$invalid && !configForm.message.$pristine }">
-                <label for="message">Message:</label>
-                <textarea class="form-control" rows="5" id="message"
-                          name="message" ng-model="vm.config.message" required></textarea>
+                 ng-class="{ 'has-danger' : configForm.levelSms.$invalid && !configForm.levelSms.$pristine }">
+                <label for="levelSms">Bottle Level To Notification Through SMS:</label>
+                <input
+                        type="number"
+                        name="levelSms"
+                        class="form-control"
+                        id="levelSms"
+                        ng-model="vm.config.levelSms"
+                        required />
             </div>
             <div class="form-group col-4"
-                 ng-class="{ 'has-danger' : configForm.channel.$invalid && !configForm.channel.$pristine }">
-                <label for="channel">Name of channel:</label>
-                <input type="text" class="form-control" id="channel" name="channel"
-                       ng-model="vm.config.channel" required>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" ng-model="checked" ng-init="checked=false">
-                    Repeat sending
-                </label>
-            </div>
-            <div class="form-group col-4" ng-if="checked"
-                 ng-class="{ 'has-danger' : configForm.time.$invalid && !configForm.time.$pristine }">
-                <label for="time">Every (hours):</label>
-                <input type="number" class="form-control input-time" id="time"
-                       name="time" ng-model="vm.config.time">
+                 ng-class="{ 'has-danger' : configForm.bottleCount.$invalid && !configForm.bottleCount.$pristine }">
+                <label for="bottleCount">Bottles To Order:</label>
+                <input
+                        type="number"
+                        name="bottleCount"
+                        class="form-control"
+                        id="bottleCount"
+                        ng-model="vm.config.bottleCount"
+                        required />
             </div>
 
-            <div class="checkbox">
-                <label><input type="checkbox" ng-model="vm.config.notification">Send notifications</label>
+            <div class="form-group col-4"
+                 ng-class="{ 'has-danger' : configForm.phoneNumber.$invalid && !configForm.phoneNumber.$pristine }">
+                <label for="phoneNumber">Phone Number For Notifications:</label>
+                <input
+                        type="number"
+                        name="phoneNumber"
+                        class="form-control"
+                        id="phoneNumber"
+                        ng-model="vm.config.phoneNumber"
+                        required />
             </div>
+
             <button class="btn btn-primary"
                     ng-disabled="!configForm || configForm.$invalid && configForm.$pristine"
                     ng-click="configForm.$setPristine()">
                 Save settings
             </button>
-            <!--<button class="btn btn-primary">Send message</button>-->
         </div>
     </form>
 
-    <div class="col-4 right">
-        <div class="form-group">
-            <label for="login">Slack login:</label>
-            <input type="text" class="form-control" id="login">
+    <div class="right">
+        <div class="form-group col-4"
+             ng-class="{ 'has-danger' : configForm.slackMessage.$invalid && !configForm.slackMessage.$pristine }">
+            <label for="slackMessage">Slack Message:</label>
+            <textarea class="form-control"
+                      rows="4"
+                      id="slackMessage"
+                      name="slackMessage"
+                      ng-model="vm.config.slackMessage"
+                      required>
+                </textarea>
         </div>
-        <div class="form-group">
-            <label for="password">Slack password:</label>
-            <input type="password" class="form-control" id="password">
+        <div class="form-group col-4"
+             ng-class="{ 'has-danger' : configForm.smsMessage.$invalid && !configForm.smsMessage.$pristine }">
+            <label for="smsMessage">SMS Message:</label>
+            <textarea class="form-control"
+                      rows="4"
+                      id="smsMessage"
+                      name="smsMessage"
+                      ng-model="vm.config.smsMessage"
+                      required>
+                </textarea>
         </div>
     </div>
 </div>

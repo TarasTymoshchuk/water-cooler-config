@@ -1,15 +1,14 @@
 <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" ui-sref="dashboard">Home</a></li>
+    <li class="active"><a data-toggle="tab" ui-sref="dashboard">DashBoard</a></li>
     <li><a data-toggle="tab" ui-sref="configs">Settings</a></li>
 </ul>
-<div class="display-flex">
-    <div class="">
-        <h4 class="water-level">Water level in the cooler</h4>
+<div class="dashboard-position">
+    <div>
+        <h3 class="water-level">Water Level In The Cooler ({{vm.weight}}%)</h3>
         <div class="container">
-
             <div class="bowl">
                 <div class="inner">
-                    <div class="fill" ng-style="{'-webkit-animation-iteration-count': vm.level}">
+                    <div class="fill" ng-style="{'-webkit-animation-iteration-count': 0.8}">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                          x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300"
                          enable-background="new 0 0 300 300" xml:space="preserve">
@@ -21,17 +20,19 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div class="container">
-        <div class="de">
-            <div class="den">
-                <div class="dene">
-                    <div class="denem">
-                        <div class="deneme">
-                            23<span>.9</span><strong>&deg;</strong>
+    <div>
+        <h4 class="water-level">The Temperature Of Hot Water</h4>
+        <div class="container">
+            <div class="de">
+                <div class="den">
+                    <div class="dene">
+                        <div class="denem">
+                            <div class="deneme">
+                                23<span>.4</span><strong>&deg;</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -39,13 +40,21 @@
         </div>
     </div>
 
-    <div class="">
-        <h4><label>Critical level of water (%):</label> 5 </h4><br>
-        <h4><label>Message:</label> The level of water in the cooler in the critical state!</h4><br>
-        <h4><label>Name of channel:</label> vinnitsa-team </h4><br>
-        <h4><label>Repeat sending:</label> Every 8 hours </h4><br>
-        <h4><label>Send notifications:</label> Yes </h4><br>
-        <button class="btn btn-primary" ui-sref="configs">Edit settings</button>
+    <div>
+        <h4 class="water-level">The Temperature Of Cold Water</h4>
+        <div class="container">
+            <div class="de">
+                <div class="den">
+                    <div class="dene">
+                        <div class="denem">
+                            <div class="deneme">
+                                5<span>.5</span><strong>&deg;</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
