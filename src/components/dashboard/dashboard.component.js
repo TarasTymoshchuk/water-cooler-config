@@ -17,6 +17,8 @@ export default DashboardComponent;
 /* @ngInject */
 function DashboardCtrl($log, $http, $timeout) {
   const vm = this;
+  vm.show = true;
+
   vm.getData = () => {
     $http.get('https://fkgcx8b7kd.execute-api.eu-west-1.amazonaws.com/prod/getSmartCoolerState').then((response) => {
       vm.temp1 = response.data.temp1;
@@ -28,6 +30,10 @@ function DashboardCtrl($log, $http, $timeout) {
       vm.temp2Int = parseInt(vm.temp2, 10);
       vm.temp2Float =
           Math.ceil(((vm.temp2 < 1.0) ? vm.temp2 : (vm.temp2 % Math.floor(vm.temp2))) * 10000).toString()[0];
+      vm.show = false;
+    }).catch((error) => {
+      vm.error = error;
+      $log.log('ERROR!', error);
     });
   };
   vm.getData();
