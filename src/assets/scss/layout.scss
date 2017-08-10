@@ -1,4 +1,44 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 body {
   font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
   background: #f2f2f2; //1D1F20
+}
+
+label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2.67;
+  letter-spacing: 1px;
+  color: #1b1c1f;
+  margin-bottom: 0;
+  display: block;
+}
+
+.form-control {
+  font-size: 14px;
+}
+
+.nav {
+  padding-left: 50px;
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  font-size: 20px;
+}
+
+.nav-tabs>li>a {
+  font-size: 19px;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }

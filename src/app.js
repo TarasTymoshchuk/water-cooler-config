@@ -43,9 +43,9 @@ angular.module(appName, [
 function config($urlRouterProvider, $httpProvider, localStorageServiceProvider, uibDropdownConfig) {
   localStorageServiceProvider.setPrefix(appName);
 
-  const httpDefaults = $httpProvider.defaults;
-  httpDefaults.withCredentials = true;
-  httpDefaults.useXDomain = true;
+  // const httpDefaults = $httpProvider.defaults;
+  // httpDefaults.withCredentials = true;
+  // httpDefaults.useXDomain = true;
 
   $urlRouterProvider.otherwise('/');
 

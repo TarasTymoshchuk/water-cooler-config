@@ -22,14 +22,14 @@ function DashboardCtrl($log, $http, $timeout) {
       vm.temp1 = response.data.temp1;
       vm.temp2 = response.data.temp2;
       vm.weight = response.data.weight;
+      vm.temp1Int = parseInt(vm.temp1, 10);
+      vm.temp1Float =
+          Math.ceil(((vm.temp1 < 1.0) ? vm.temp1 : (vm.weight % Math.floor(vm.temp1))) * 10000).toString()[0];
+      vm.temp2Int = parseInt(vm.temp2, 10);
+      vm.temp2Float =
+          Math.ceil(((vm.temp2 < 1.0) ? vm.temp2 : (vm.temp2 % Math.floor(vm.temp2))) * 10000).toString()[0];
     });
   };
-  vm.temp1Int = parseInt(vm.temp1, 10);
-  vm.temp1Float =
-      Math.ceil(((vm.temp1 < 1.0) ? vm.temp1 : (vm.weight % Math.floor(vm.temp1))) * 10000).toString()[0];
-  vm.temp2Int = parseInt(vm.temp2, 10);
-  vm.temp2Float =
-      Math.ceil(((vm.temp2 < 1.0) ? vm.temp2 : (vm.temp2 % Math.floor(vm.temp2))) * 10000).toString()[0];
   vm.getData();
 
   vm.intervalFunction = () => {

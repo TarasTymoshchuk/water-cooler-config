@@ -1,16 +1,40 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 dashboard-component {
   @import url(https://fonts.googleapis.com/css?family=Dosis:200,400,500,600);
 
   .dashboard-position {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 0 50px 0 50px;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 20px 0 20px;
+    }
+  }
+
+  .title-sensor {
+    margin-top: 40px;
+    @include media-breakpoint-down(md) {
+      margin-top: 60px;
+      text-align: center;
+    }
   }
 
   // temperature
   .container {
-    padding-left: 50px;
+    padding-top: 20px;
     width: 300px;
-    margin: 10px auto 0;
+    margin: 60px auto 0;
+    @include media-breakpoint-down(md) {
+      margin: 30px auto 0;
+      padding-left: 40px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-left: 80px;
+    }
   }
   .de .den, .de .dene, .de .denem, .de .deneme {
     position: absolute;
@@ -24,6 +48,10 @@ dashboard-component {
     border-radius: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     background-color: transparent;
+    @include media-breakpoint-down(sm) {
+      width: 150px;
+      height: 150px;
+    }
   }
   .den {
     position: relative;
@@ -38,6 +66,11 @@ dashboard-component {
     background: -webkit-linear-gradient(left, #df3341 0%, #d4f355 50%, #61c0ec 100%);
     background: linear-gradient(to right, #df3341 0%, #d4f355 50%, #61c0ec 100%);
     position: relative;
+    @include media-breakpoint-down(sm) {
+      width: 160px;
+      height: 160px;
+      margin: -85px 0 0 -85px;
+    }
   }
   .dene {
     width: 180px;
@@ -50,6 +83,11 @@ dashboard-component {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f6f5), color-stop(100%, #cbd5d6));
     background: -webkit-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
     background: -o-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+    @include media-breakpoint-down(sm) {
+      width: 130px;
+      height: 130px;
+      margin: -65px 0 0 -65px;
+    }
   }
   .denem {
     width: 160px;
@@ -60,10 +98,15 @@ dashboard-component {
     background: -moz-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cbd5d6), color-stop(100%, #f2f6f5));
     background: -webkit-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
+    @include media-breakpoint-down(sm) {
+      width: 110px;
+      height: 110px;
+      margin: -55px 0 0 -55px;
+    }
   }
   .deneme {
     padding: 3px 10px 0 10px;
-    width: 120px;
+    width: 135px;
     height: 137px;
     display: inline-block;
     margin: -70px 0 0 -70px;
@@ -73,6 +116,10 @@ dashboard-component {
     font-size: 100px;
     font-weight: 400;
     text-align: center;
+    @include media-breakpoint-down(sm) {
+      font-size: 50px;
+      margin: -30px 0 0 -70px;
+    }
   }
   .deneme span {
     font-size: 30px;
@@ -83,47 +130,12 @@ dashboard-component {
     right: 10px;
     top: 25px;
     font-size: 34px;
-  }
-  .water-level {
-    margin-left: 40px;
-    margin-top: 40px;
-  }
-  .container {
-    margin-top: 50px;
-    padding-top: 20px;
-    /*background-color: #beb*/
-  }
-  .vertical {
-    display: inline-block;
-    width: 20%;
-    height: 40px;
-    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-    transform: rotate(-90deg);
-  }
-  .vertical {
-    box-shadow: inset 0px 4px 6px #ccc;
-    margin-top: 40px;
-  }
-  .progress-bar {
-    box-shadow: inset 0px 4px 6px rgba(100, 100, 100, 0.6);
-  }
-  .horizontal {
-    transform: rotate(90deg);
-    margin-top: 10px;
+    @include media-breakpoint-down(sm) {
+      right: 30px;
+      top: 0;
+    }
   }
 
-  .left {
-    position: absolute;
-    width: 50%;
-  }
-
-  .right {
-    position: absolute;
-    top: 80px;
-    right: 400px;
-    width: 40%;
-
-  }
   h4 {
     margin-top: 0;
     margin-bottom: 0;
@@ -131,6 +143,7 @@ dashboard-component {
 
   //animation cooler
   .bowl {
+    margin-left: 40px;
     position: relative;
     border-radius: 50%;
     width: 200px;
@@ -139,7 +152,13 @@ dashboard-component {
     background: -moz-radial-gradient(center, ellipse cover, transparent 0%, transparent 76%, rgba(0, 0, 0, 0.65) 100%);
     background: -webkit-radial-gradient(center, ellipse cover, transparent 0%, transparent 76%, rgba(0, 0, 0, 0.65) 100%);
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.65) 100%);
-    margin: 20px;
+    @include media-breakpoint-down(md) {
+      margin-left: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 150px;
+      height: 150px;
+    }
   }
   .bowl:before {
     overflow: hidden;
@@ -153,6 +172,10 @@ dashboard-component {
     width: 200px;
     height: 200px;
     z-index: 2;
+    @include media-breakpoint-down(sm) {
+      width: 150px;
+      height: 150px;
+    }
   }
   .bowl:after {
     content: "";
@@ -177,6 +200,10 @@ dashboard-component {
     overflow: hidden;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
+    @include media-breakpoint-down(sm) {
+      width: 150px;
+      height: 150px;
+    }
   }
   .bowl .inner:before {
     content: "";
@@ -217,20 +244,44 @@ dashboard-component {
     fill: #039be4;
   }
 
-  @-webkit-keyframes fillAction {
-    0% {
-      -webkit-transform: translate(0, 200px);
-    }
-    100% {
-      -webkit-transform: translate(0, 10px);
+  @include media-breakpoint-down(sm) {
+    @-webkit-keyframes fillAction {
+      0% {
+        -webkit-transform: translate(0, 150px);
+      }
+      100% {
+        -webkit-transform: translate(0, 5px);
+      }
     }
   }
-  @-webkit-keyframes waveAction {
-    0% {
-      -webkit-transform: translate(-100px, 0);
+  @include media-breakpoint-up(md) {
+    @-webkit-keyframes fillAction {
+      0% {
+        -webkit-transform: translate(0, 200px);
+      }
+      100% {
+        -webkit-transform: translate(0, 5px);
+      }
     }
-    100% {
-      -webkit-transform: translate(0, 0);
+  }
+  @include media-breakpoint-down(sm) {
+    @-webkit-keyframes waveAction {
+      0% {
+        -webkit-transform: translate(-150px, 0);
+      }
+      100% {
+        -webkit-transform: translate(0, 0);
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    @-webkit-keyframes waveAction {
+      0% {
+        -webkit-transform: translate(-105px, 0);
+      }
+      100% {
+        -webkit-transform: translate(0, 0);
+      }
     }
   }
 }

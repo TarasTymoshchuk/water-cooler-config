@@ -32,7 +32,8 @@
     "lodash": "^4.17.4",
     "satellizer": "^0.15.5",
     "ui-select": "^0.19.6",
-    "bootstrap-material-lite": "^1.0.1"
+    "bootstrap-material-lite": "^1.0.1",
+    "angular-ui-mask": "^1.8.7"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

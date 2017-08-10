@@ -11,6 +11,13 @@ const ConfigsComponent = {
 export default ConfigsComponent;
 
 /* @ngInject */
-function ConfigsCtrl() {
+function ConfigsCtrl($scope, $location, appConfig) {
+  const vm = this;
 
+  vm.mobileNumberMask = $location.search().mobileNumberMask || appConfig.mobileNumberMask;
+  vm.mobileNumberPrefix = $location.search().mobileNumberPrefix || appConfig.mobileNumberPrefix;
+
+  // $scope.$watch('vm.mobileNumber', (value) => {
+  //   vm.config.mobileNumber = value && `${vm.mobileNumberPrefix}${value}`;
+  // });
 }

@@ -7,7 +7,6 @@ function GlobalCtrl($scope, $state) {
 
   vm.$state = $state;
   vm.logginedUser = null;
-  $state.go('dashboard');
 
   // vm.signOut = signOut;
   //
