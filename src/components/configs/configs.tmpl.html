@@ -10,9 +10,9 @@
                             type="number"
                             min="0"
                             name="levelSlack"
-                            class="form-control input-number"
+                            class="form-control form-input"
                             id="levelSlack"
-                            ng-model="vm.config.levelSlack"
+                            ng-model="vm.config.data.BOTTLE_LEVEL_TO_NOTIFY_SLACK"
                             required/>
                 </div>
                 <div class="form-group col-12"
@@ -22,9 +22,9 @@
                             type="number"
                             min="0"
                             name="levelSms"
-                            class="form-control input-number"
+                            class="form-control form-input"
                             id="levelSms"
-                            ng-model="vm.config.levelSms"
+                            ng-model="vm.config.data.BOTTLE_LEVEL_TO_NOTIFY_SMS"
                             required/>
                 </div>
                 <div class="form-group col-12"
@@ -34,9 +34,19 @@
                             type="number"
                             min="0"
                             name="bottleCount"
-                            class="form-control input-number"
+                            class="form-control form-input"
                             id="bottleCount"
-                            ng-model="vm.config.bottleCount"
+                            ng-model="vm.config.data.BOTTLES_TO_ORDER"
+                            required/>
+                </div>
+                <div class="form-group col-12"
+                     ng-class="{ 'has-danger' : configForm.slackUrl.$invalid && !configForm.slackUrl.$pristine }">
+                    <label for="slackUrl">Slack URL:</label>
+                    <input
+                            name="slackUrl"
+                            class="form-control form-input"
+                            id="slackUrl"
+                            ng-model="vm.config.data.SLACK_URL"
                             required/>
                 </div>
                 <div class="form-group col-12"
@@ -44,9 +54,8 @@
                     <label for="mobileNumber">Phone Number For Notifications:</label>
                     <input name="mobileNumber"
                            id="mobileNumber"
-                           ng-model="vm.mobileNumber"
-                           type="text"
-                           class="form-control input-number"
+                           ng-model="vm.config.TWILLIO_PHONE_NUMBER_TO"
+                           class="form-control form-input"
                            ui-mask="{{vm.mobileNumberMask}}"
                            ui-mask-placeholder
                            ui-mask-placeholder-char="_"
@@ -54,8 +63,8 @@
                 </div>
                 <div class="form-group col-4 hidden-md-down margin-top-30">
                     <button class="btn btn-primary save-config"
-                            ng-disabled="!configForm || configForm.$invalid && configForm.$pristine"
-                            ng-click="configForm.$setPristine()">
+                            ng-disabled="!configForm || configForm.$invalid || configForm.$pristine || vm.loading"
+                            ng-click="configForm.$setPristine(); vm.updateConfigs(vm.config.data)">
                         Save settings
                     </button>
                 </div>
@@ -69,7 +78,7 @@
                               rows="5"
                               id="slackMessage"
                               name="slackMessage"
-                              ng-model="vm.config.slackMessage"
+                              ng-model="vm.config.data.SLACK_MESSAGE"
                               required>
                 </textarea>
                 </div>
@@ -80,14 +89,14 @@
                               rows="5"
                               id="smsMessage"
                               name="smsMessage"
-                              ng-model="vm.config.smsMessage"
+                              ng-model="vm.config.data.SMS_MESSAGE"
                               required>
                 </textarea>
                 </div>
                 <div class="form-group col-12 margin-top-30 hidden-lg-up">
                     <button class="btn btn-primary save-config"
-                            ng-disabled="!configForm || configForm.$invalid && configForm.$pristine"
-                            ng-click="configForm.$setPristine()">
+                            ng-disabled="!configForm || configForm.$invalid || configForm.$pristine || vm.loading"
+                            ng-click="configForm.$setPristine(); vm.updateConfigs()">
                         Save settings
                     </button>
                 </div>
