@@ -7,19 +7,5 @@ function GlobalCtrl($scope, $state) {
 
   vm.$state = $state;
   vm.logginedUser = null;
-
-  // vm.signOut = signOut;
-  //
-  // $scope.$on('userChanged', (e, user) => {
-  //   vm.logginedUser = user;
-  //   if (!user) {
-  //     $state.go('signin');
-  //   } else {
-  //     //  $state.go('home');
-  //   }
-  // });
-  //
-  // function signOut() {
-  //   AuthService.signOut();
-  // }
+  $state.go('dashboard');
 }

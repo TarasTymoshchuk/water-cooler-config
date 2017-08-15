@@ -19,22 +19,6 @@ label {
   font-size: 14px;
 }
 
-.nav {
-  padding-left: 50px;
-  @include media-breakpoint-down(md) {
-    justify-content: center;
-    padding-left: 0;
-  }
-}
-
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-  font-size: 20px;
-}
-
-.nav-tabs > li > a {
-  font-size: 19px;
-}
-
 .margin-top-60 {
   margin-top: 60px;
 }
@@ -45,9 +29,15 @@ label {
 
 // preloader
 .sk-cube-grid {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   width: 40px;
   height: 40px;
-  margin: 400px auto;
 }
 
 .sk-cube-grid .sk-cube {

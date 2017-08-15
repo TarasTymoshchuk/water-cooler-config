@@ -3,7 +3,6 @@
 import angular from 'angular';
 import AngularUiRouter from 'angular-ui-router';
 import AngularAnimate from 'angular-animate';
-import AngularSanitize from 'angular-sanitize';
 import AngularBootstrap from 'angular-ui-bootstrap';
 
 /* eslint-disable */
@@ -27,7 +26,6 @@ angular.module(appName, [
   // framework wide components
   AngularUiRouter,
   AngularAnimate,
-  AngularSanitize,
   AngularBootstrap,
 
   // services

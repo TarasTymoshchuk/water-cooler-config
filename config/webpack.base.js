@@ -17,11 +17,9 @@ module.exports = function (env) {
         getPath('./config/dev.config.js')
       ],
       vendors: [
-        'jquery',
         'angular',
         'angular-ui-router',
         'angular-animate',
-        'angular-sanitize',
         'angular-resource',
         'angular-ui-bootstrap'
       ]
@@ -35,13 +33,11 @@ module.exports = function (env) {
     resolve: {
       modules: [distPath, 'node_modules', 'libs'],
       alias: {
-        'schemaForm': 'angular-schema-form/dist/schema-form'
       }
     },
     module: {
       loaders: [{
         test: /\/libs\/.*\.js/,
-        loader: "imports-loader?this=>window,exports=>undefined,jQuery=jquery",
       }, {
         test: /\.js$/,
         exclude: /(node_modules)/,

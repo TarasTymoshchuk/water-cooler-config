@@ -1,6 +1,5 @@
 import angular from 'angular';
 import angularResource from 'angular-resource';
-import satellizer from 'satellizer';
 import ngCookies from 'angular-cookies';
 import AppConfig from './appConfig';
 import AuthService from './auth.service';
@@ -12,7 +11,6 @@ export default angular
   .module('core.services', [
     auth,
     angularResource,
-    satellizer,
     ngCookies
   ])
   .constant('appConfig', AppConfig)
