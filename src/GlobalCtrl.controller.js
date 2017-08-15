@@ -7,5 +7,5 @@ function GlobalCtrl($scope, $state) {
 
   vm.$state = $state;
   vm.logginedUser = null;
-  $state.go('dashboard');
+  $state.go('configs');
 }
