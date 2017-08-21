@@ -96,7 +96,7 @@
                 <div class="form-group col-12 margin-top-30 hidden-lg-up">
                     <button class="btn btn-primary save-config"
                             ng-disabled="!configForm || configForm.$invalid || configForm.$pristine || vm.loading"
-                            ng-click="configForm.$setPristine(); vm.updateConfigs()">
+                            ng-click="configForm.$setPristine(); vm.updateConfigs(vm.config.data)">
                         Save settings
                     </button>
                 </div>

@@ -11,7 +11,7 @@ const ConfigsComponent = {
 export default ConfigsComponent;
 
 /* @ngInject */
-function ConfigsCtrl($location, $http, $log) {
+function ConfigsCtrl($location, $http, $log, $scope) {
   const vm = this;
   vm.loading = false;
   const mobileNumberPrefix = '+380';
@@ -37,6 +37,9 @@ function ConfigsCtrl($location, $http, $log) {
   }
 
   vm.updateConfigs = (config) => {
+    $scope.$watch('vm.config.TWILLIO_PHONE_NUMBER_TO', (value) => {
+      vm.config.data.TWILLIO_PHONE_NUMBER_TO = value && `${vm.mobileNumberPrefix}${value}`;
+    });
     $http.put('https://23kl9657m1.execute-api.eu-west-1.amazonaws.com/prod/setSmartCoolerConfig', config)
         .then(() => {
           getConfigs();
