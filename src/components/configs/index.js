@@ -1,3 +1,4 @@
+import 'angular-input-masks';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -10,7 +11,8 @@ export default angular.module('configs', [
   AppCore,
   uiRouter,
   uiMask,
-  uiBootstrap
+  uiBootstrap,
+  'ui.utils.masks'
 ])
   .config(config)
   .component(ConfigsComponent.$name, ConfigsComponent)

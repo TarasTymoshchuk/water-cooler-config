@@ -7,9 +7,10 @@
                      ng-class="{ 'has-danger' : configForm.levelSlack.$invalid && !configForm.levelSlack.$pristine }">
                     <label for="levelSlack">Bottle Level To Notification In Slack:</label>
                     <input
-                            type="number"
                             min="0"
                             name="levelSlack"
+                            ui-percentage-mask="0"
+                            ui-percentage-value
                             class="form-control form-input"
                             id="levelSlack"
                             ng-model="vm.config.data.BOTTLE_LEVEL_TO_NOTIFY_SLACK"
@@ -19,9 +20,10 @@
                      ng-class="{ 'has-danger' : configForm.levelSms.$invalid && !configForm.levelSms.$pristine }">
                     <label for="levelSms">Bottle Level To Notification Through SMS:</label>
                     <input
-                            type="number"
                             min="0"
                             name="levelSms"
+                            ui-percentage-mask="0"
+                            ui-percentage-value
                             class="form-control form-input"
                             id="levelSms"
                             ng-model="vm.config.data.BOTTLE_LEVEL_TO_NOTIFY_SMS"
